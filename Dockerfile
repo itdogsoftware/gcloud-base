@@ -9,4 +9,4 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 RUN apt-get update -y && apt-get install kubectl google-cloud-sdk-gke-gcloud-auth-plugin -y
 RUN ssh-keygen -t rsa -f /root/.ssh/google_compute_engine -C "" -N ""
 RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-RUN . ./get_helm.sh && rm ./get_helm.sh
+RUN chmod 700 ./get_helm.sh && ./get_helm.sh && rm ./get_helm.sh
